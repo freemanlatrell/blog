@@ -3,9 +3,9 @@
 Modernizing applications and automation on z/OS just got a lot easier with the latest release of the IBM Z and Cloud Modernization Stack! 
 
 
-In the previous release of the IBM Z and Cloud Modernization Stack, we provided solutions such as the IBM z/OS Package Manager that allows you to easily install and manage z/OS native software on a target z/OS host, and the IBM IMS Operator that allows you the ability to provision and manage your IMS subsystem from OpenShift. Along with the additional features we’ve added to those services in the latest release, we’ve decided to take things a step further and open up our platform to allow z/OS developers the ability to develop their own Ansible solutions on OpenShift! 
+In the previous release of the IBM Z and Cloud Modernization Stack, we provided solutions such as the IBM z/OS Package Manager that allows you to easily install and manage z/OS native software on a target z/OS host, and the IBM IMS Operator that allows you the ability to provision and manage your IMS subsystem from OpenShift. Along with the additional features we’ve added to those services in the latest release, we’ve decided to take things a step further and open up our platform, by publishing our [Operator Collection Specification][oc-spec], allowing z/OS developers the ability to develop their own Operator Collections in OpenShift! We're also providing the [IBM Operator Collection SDK][oc-sdk], which delivers all of the tools you need to make the Operator Collection development experience as simple as possible.
 
-In addition, we’ve also redesigned our IBM z/OS Cloud Broker operator catalog to promote the sharing of these Ansible solutions as community Operator Collections in our IBM z/OS Cloud Broker Galaxy Operator Catalog. So now you can easily expose your Ansible automation in the OpenShift Container Platform, to be consumed in the same fashion as other cloud native services, while also discovering other open z/OS solutions in the Operator Collection community, that can also be leveraged to build z/OS applications running on OpenShift. 
+In addition, we’ve also redesigned our IBM z/OS Cloud Broker operator catalog to promote the sharing of these Operator Collections in our IBM z/OS Cloud Broker Galaxy Operator Catalog. So now you can easily expose your Ansible automation in the OpenShift Container Platform, to be consumed in the same fashion as other cloud native services, while also discovering other open z/OS solutions in the Operator Collection community, that can also be leveraged to build z/OS applications running on OpenShift. 
 
 ## **So, what are Operator Collections?**
 
@@ -27,15 +27,15 @@ Having the ability to provide a consistent cloud experience for both z/OS and no
 
 Although OpenShift is considered a “Container Platform” powered by Kubernetes, orchestrating containers isn’t the only benefit to running on OpenShift. The other benefit is the ability to extend the Kubernetes API with your own custom API’s, allowing CRUD actions to be performed against your OpenShift operator, using REST requests against the OpenShift cluster. Let’s walk through an example to further explain…
 
-When you’re building your Operator Collection using the [Operator Collection Specification][oc-spec], you’re actually building out the body for the API of the new object to be created in OpenShift. Take for example the RACF operator configuration in the recording below. In this Operator Collection, we are generating an operator that allows for the self-service creation and deletion of a user ID on a z/OS host. 
+When you’re building your Operator Collection using the [Operator Collection Specification][oc-spec], you’re actually building out the body for the API of the new object to be created in OpenShift. Take for example the RACF operator configuration in the video below. In this Operator Collection, we are generating an operator that allows for the self-service creation and deletion of a user ID on a z/OS host. 
 
 
-Under the `resources` section, we are creating a new object (in Kubernetes this is called a `Kind`) in OpenShift called `ZosUserID`. In the `playbook` field we are telling OpenShift which playbooks to execute when an instance is created (or a POST request is sent to the API server), and the `finalizer` field is telling OpenShift which playbook to execute when the instance is deleted (or a DELETE request is sent to the API server). For this object we’d like to require that the following fields to be passed in the API request to execute the Operator Collection. In this example those fields (which are passed as variables to our playbooks) are `name` and `userid`. Once this Operator Collection is deployed to OpenShift, a new object is now available in the cluster called `ZosUserID`, which we can now perform REST requests to execute this collection in OpenShift.
+Under the `resources` section, we are creating a new object (in Kubernetes this is called a `Kind`) in OpenShift called `ZosUserID`. In the `playbook` field we are telling OpenShift which playbooks to execute when an instance is created (or a POST request is sent to the API server), and the `finalizer` field is telling OpenShift which playbook to execute when the instance is deleted (or a DELETE request is sent to the API server). For this object we’d like to require that the following fields are passed in the API request to execute the Operator Collection. In this example those fields are `name` and `userid`. Once this Operator Collection is deployed to OpenShift, a new object is now available in the cluster called `ZosUserID`, which we can now perform REST requests (via the `oc` CLI or an API tool of your choice) to execute this collection in OpenShift.
 
 <video src=https://github.com/freemanlatrell/blog/assets/24191850/4f9693ce-d901-47ba-8883-6fcd353b3d8e controls="controls" style="max-width: 730px;">
 </video>
 
-Taking this a step further, we can also store these .yml files for our user IDs in a source-controlled management system like Git. Then we can build a CI/CD pipeline around our repository that executes these API’s, to quickly redeploy these user IDs on newly provisioned z/OS hosts. Adding a new user in a production environment can now be managed via a Pull Request in GitHub, that adds a new .yml file to the repository, while the available operator in OpenShift also allows for the self-service ID creation for developers needing a new ID created on a development Wazi Sandbox environment. Which takes me to my third and final advantage which is…
+Taking this a step further, we can also store these `.yml` files for our user IDs in a source-controlled management system like Git. Then we can build a CI/CD pipeline around our repository that executes these API’s, to quickly redeploy these user IDs on newly provisioned z/OS hosts. Adding a new user in a production environment can now be managed via a Pull Request in GitHub, that adds a new `.yml` file to the repository, while the available operator in OpenShift also allows for the self-service ID creation for developers needing a new ID created on a development Wazi Sandbox environment. Which takes me to my third and final advantage which is…
 
 ### **3. Provides self-service consumption of your Ansible solution.**
 
@@ -49,11 +49,11 @@ Take a moment to consider all of the mundane tasks currently being executed by a
 
 ## **Ok, I’m convinced and ready to get started!**
 
-Along with the latest release of the IBM Z and Cloud Modernization Stack, we’ve also made available a free open-source tool called the [IBM Operator Collection SDK][oc-sdk], to simplify the development process for creating Operator Collections by providing the following features:
-•	Scaffold generation: The SDK enables scaffolding a new operator collection with a preconfigured set of requirements. It also incorporates the necessary operator-config.yml file into existing Ansible collections, enabling their conversion to operator collections supported by the z/OS Cloud Broker.
-•	Efficient debugging: The SDK enables rapid debugging of your Ansible automation in an operator in OpenShift by using a local build of your latest Ansible modifications.
+As mentioned above, along with the latest release of the IBM Z and Cloud Modernization Stack, we’ve also made available a free open-source tool called the [IBM Operator Collection SDK][oc-sdk], to simplify the development process for creating Operator Collections by providing the following features:
+- **Scaffold generation:** The SDK enables scaffolding a new operator collection with a preconfigured set of requirements. It also incorporates the necessary operator-config.yml file into existing Ansible collections, enabling their conversion to operator collections supported by the z/OS Cloud Broker.
+- **Efficient debugging:** The SDK enables rapid deployment and debugging of your Ansible automation in an operator in OpenShift by using a local build of your latest Ansible modifications.
 
-This repository also provides the Operator Collection Specification needed to configure your operator configuration file, and also includes a [tutorial][oc-sdk-tutorial] to guide you through the process of creating your first Operator Collection.
+In this repository, you will also have access to the [RACF operator tutorial][oc-sdk-tutorial] to guide you through the process of creating your first Operator Collection, and the Operator Collection development guide for best practices when developing Operator Collections.
 
 Developing an Operator Collection in OpenShift also requires the installation of the IBM z/OS Cloud Broker, and optionally the IBM Wazi Sandbox. These products are now available in a free 60 day trial of the IBM Z and Cloud Modernization Stack which we invite you to try here. (ADD TRIAL LINK HERE)
 
@@ -62,7 +62,7 @@ Now that you’re equipped to take advantage of the endless possibilities of Ope
 Let’s innovate and modernize z/OS together, with open-source solutions that can help grow the z/OS platform faster than ever before!
 
 
-[oc-sdk]:https://github.com/IBM/operator-collection-sdk
+[oc-sdk]:https://github.com/IBM/operator-collection-sdk/tree/main/ibm/operator_collection_sdk
 [oc-sdk-tutorial]:https://github.com/IBM/operator-collection-sdk/blob/main/docs/tutorial.md
 [oc-spec]:https://github.com/IBM/operator-collection-sdk/blob/main/docs/spec.md
 [example-operator]:https://github.com/IBM/operator-collection-sdk/tree/main/examples/racf-operator
