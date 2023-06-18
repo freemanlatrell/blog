@@ -1,6 +1,6 @@
 +++
 title = 'Modernizing and Innovating on Z just got a lot easier!'
-slug = 'oc-sdk-blog'
+slug = 'operator-collection-blog'
 image = 'images/red_cloud_image.jpg'
 date = "2023-06-17T00:00:00"
 description = 'We are pleased to announce that modernizing applications and automation on z/OS has become significantly easier with the latest release of the IBM Z and Cloud Modernization Stack.'
