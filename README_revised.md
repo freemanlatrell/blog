@@ -66,4 +66,4 @@ Let's embark on an exciting journey of innovation and modernization for z/OS tog
 [oc-sdk-tutorial]:https://github.com/IBM/operator-collection-sdk/blob/main/docs/tutorial.md
 [oc-spec]:https://github.com/IBM/operator-collection-sdk/blob/main/docs/spec.md
 [example-operator]:https://github.com/IBM/operator-collection-sdk/tree/main/examples/racf-operator
-[trial-link]: (ADD TRIAL LINK HERE)
+[trial-link]:https://www.ibm.com/account/reg/us-en/signup?formid=urx-51680
