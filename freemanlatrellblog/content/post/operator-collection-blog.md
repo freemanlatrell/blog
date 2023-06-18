@@ -38,8 +38,7 @@ When building your Operator Collection using the [Operator Collection Specificat
 
 Under the `resources` section, a new object called `ZosUserID` (referred to as a `Kind` in Kubernetes) is created in OpenShift. The `playbook` field specifies which playbooks to execute when an instance is created (or a POST request is sent to the API server). The `finalizer` specifies which playbooks to execute when an instance is deleted (or a DELETE request is sent to the API server). This object requires specific fields (`name` and `userid`) in the API request for executing the Operator Collection. Once deployed to OpenShift, a new object named `ZosUserID` is available in the cluster, and you can use REST requests (via the `oc` CLI or an API tool) to execute this collection in OpenShift.
 
-<video src=https://github.com/freemanlatrell/blog/assets/24191850/4f9693ce-d901-47ba-8883-6fcd353b3d8e controls="controls" style="max-width: 730px;">
-</video>
+https://github.com/IBM/operator-collection-sdk/blob/5c3ab6e59a86d7ce363f46f7d675668fc735ac08/examples/racf-operator/operator-config.yml#L1-L39
 
 Additionally, you can store the `.yml` files containing user IDs in a source-controlled management system like Git. By incorporating a CI/CD pipeline for your repository, you can execute these APIs and quickly redeploy user IDs on newly provisioned z/OS hosts. For instance, adding a new user in a production environment becomes a pull request in GitHub that includes a new `.yml` file in the repository. The available operator in OpenShift enables self-service ID creation for developers who need a new ID in a development Wazi Sandbox environment. This brings me to the third advantage which is...
 
