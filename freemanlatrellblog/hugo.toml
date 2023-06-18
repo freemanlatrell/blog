@@ -1,4 +1,11 @@
-baseURL = 'https://freemanlatrell.github.io/'
+baseURL = 'https://freemanlatrell.github.io/blog'
 languageCode = 'en-us'
 title = "Blogs"
 theme = 'hugo-theme-massively'
+googleanalytics = ""
+disqusShortname = ""
+disableKinds = ["taxonomy", "taxonomyTerm", "section"]
+
+[languages]
+[languages.en]
+  languageName = "English"
