@@ -1,3 +1,7 @@
 [submodule "freemanlatrellblog/themes/hugo-theme-massively"]
 	path = freemanlatrellblog/themes/hugo-theme-massively
 	url = https://github.com/curtiscde/hugo-theme-massively.git
+[submodule "freemanlatrellblog/public"]
+	path = freemanlatrellblog/public
+	url = https://github.com/freemanlatrell/freemanlatrell.github.io.git
+	branch = main
