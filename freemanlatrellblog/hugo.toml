@@ -1,4 +1,4 @@
-baseURL = 'https://freemanlatrell.github.io/'
+baseURL = 'https://freemanlatrell.github.io/blog'
 languageCode = 'en-us'
 title = "Z Modernization Blogs"
 theme = 'hugo-theme-massively'
