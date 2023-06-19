@@ -1,12 +1,14 @@
-+++
-title = 'Modernizing and Innovating on Z just got a lot easier!'
-slug = 'operator-collection-blog'
-image = 'images/red_cloud_image.jpg'
-date = "2023-06-17T00:00:00"
-description = 'We are pleased to announce that modernizing applications and automation on z/OS has become significantly easier with the latest release of the IBM Z and Cloud Modernization Stack.'
-disableComments = false
-+++
+---
+title: 'Modernizing and Innovating on Z just got a lot easier!'
+slug: 'operator-collection-blog'
+image: 'images/red_cloud_image.jpg'
+imageDescription: Photo by Growtika on Unsplash
+date: "2023-06-17T00:00:00"
+disableComments: false
+author: Latrell Freeman
+---
 
+We are pleased to announce that modernizing applications and automation on z/OS has become significantly easier with the latest release of the IBM Z and Cloud Modernization Stack.
 
 In the previous release, we introduced valuable solutions, such as the IBM z/OS Package Manager, enabling effortless installation and management of z/OS native software on your target z/OS host. Additionally, we provided the IBM IMS Operator, empowering you to provision and manage your IMS subsystem from OpenShift. Building upon these services, we now offer even more capabilities in the latest release.
 
@@ -38,7 +40,25 @@ When building your Operator Collection using the [Operator Collection Specificat
 
 Under the `resources` section, a new object called `ZosUserID` (referred to as a `Kind` in Kubernetes) is created in OpenShift. The `playbook` field specifies which playbooks to execute when an instance is created (or a POST request is sent to the API server). The `finalizer` specifies which playbooks to execute when an instance is deleted (or a DELETE request is sent to the API server). This object requires specific fields (`name` and `userid`) in the API request for executing the Operator Collection. Once deployed to OpenShift, a new object named `ZosUserID` is available in the cluster, and you can use REST requests (via the `oc` CLI or an API tool) to execute this collection in OpenShift.
 
-https://github.com/IBM/operator-collection-sdk/blob/5c3ab6e59a86d7ce363f46f7d675668fc735ac08/examples/racf-operator/operator-config.yml#L1-L39
+**Deploying Operator Collection to create the API in OpenShift:**
+
+{{< rawhtml >}} 
+
+<video width=75% controls autoplay>
+    <source src="../../images/deploy_collection.mov">
+</video>
+
+{{< /rawhtml >}}
+
+**REST requests using OC CLI:**
+
+{{< rawhtml >}} 
+
+<video width=75% controls autoplay>
+    <source src="../../images/execute_apis.mov">
+</video>
+
+{{< /rawhtml >}}
 
 Additionally, you can store the `.yml` files containing user IDs in a source-controlled management system like Git. By incorporating a CI/CD pipeline for your repository, you can execute these APIs and quickly redeploy user IDs on newly provisioned z/OS hosts. For instance, adding a new user in a production environment becomes a pull request in GitHub that includes a new `.yml` file in the repository. The available operator in OpenShift enables self-service ID creation for developers who need a new ID in a development Wazi Sandbox environment. This brings me to the third advantage which is...
 

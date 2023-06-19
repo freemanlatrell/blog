@@ -1,11 +1,15 @@
 baseURL = 'https://freemanlatrell.github.io/'
 languageCode = 'en-us'
-title = "Blogs"
+title = "Z Modernization Blogs"
 theme = 'hugo-theme-massively'
 googleanalytics = ""
 disqusShortname = ""
-disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 [languages]
 [languages.en]
   languageName = "English"
+
+[taxonomies]
+  author = "authors"
+  tag = "tags"
+  category = "categories"
