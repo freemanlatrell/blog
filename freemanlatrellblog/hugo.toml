@@ -1,6 +1,6 @@
 baseURL = 'https://freemanlatrell.github.io/blog'
 languageCode = 'en-us'
-title = "Z Modernization Blogs"
+title = "IBM Z Modernization Blogs"
 theme = 'hugo-theme-massively'
 googleanalytics = ""
 disqusShortname = ""
