@@ -1,11 +1,12 @@
 ---
-title: 'Modernizing and Innovating on Z just got a lot easier!'
+title: 'Modernizing and Innovating on IBM Z just got a lot easier!'
 slug: 'operator-collection-blog'
 image: 'images/red_cloud_image.jpg'
 imageDescription: Photo by Growtika on Unsplash
 date: "2023-06-20T00:00:00"
 disableComments: false
 author: Latrell Freeman
+authorTitle: Lead Architect - IBM z/OS Cloud Broker
 ---
 
 We are pleased to announce that modernizing applications and automation on z/OS has become significantly easier with the latest release of the IBM Z and Cloud Modernization Stack.
