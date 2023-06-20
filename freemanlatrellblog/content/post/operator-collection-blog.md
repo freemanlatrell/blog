@@ -3,7 +3,7 @@ title: 'Modernizing and Innovating on Z just got a lot easier!'
 slug: 'operator-collection-blog'
 image: 'images/red_cloud_image.jpg'
 imageDescription: Photo by Growtika on Unsplash
-date: "2023-06-17T00:00:00"
+date: "2023-06-20T00:00:00"
 disableComments: false
 author: Latrell Freeman
 ---
@@ -94,6 +94,8 @@ Now that you have the tools to unlock the limitless potential of Operator Collec
 
 Let's embark on an exciting journey of innovation and modernization for z/OS together. Together, we can leverage open-source solutions to propel the z/OS platform forward like never before!
 
+## Learn More
+Check out Mike Fulton’s [blog][mike-blog] to see what else we have to offer in the latest release of the IBM Z and Cloud Modernization Stack, and the various tools on z/OS.
 
 [oc-sdk]:https://github.com/IBM/operator-collection-sdk/tree/main/ibm/operator_collection_sdk
 [oc-sdk-tutorial]:https://github.com/IBM/operator-collection-sdk/blob/main/docs/tutorial.md
@@ -101,4 +103,5 @@ Let's embark on an exciting journey of innovation and modernization for z/OS tog
 [example-operator]:https://github.com/IBM/operator-collection-sdk/tree/main/examples/racf-operator
 [file-manager-operator]:https://github.com/freemanlatrell/file-manager-operator-collection
 [file-manager-workflow]:https://github.com/freemanlatrell/file-manager-operator-collection/blob/main/.github/workflows/release.yml
+[mike-blog]:https://makingdeveloperslivesbetter.wordpress.com/2023/06/20/got-enough-tools/
 [trial-link]:https://www.ibm.com/account/reg/us-en/signup?formid=urx-51680
