@@ -1,6 +1,6 @@
 ---
 title: 'Building an Operator Collection using Ansible Lightspeed with Watson Code Assistant'
-slug: 'building-operator-collection-with-ansible-lightspeed'
+slug: 'building-an-operator-collection-with-ansible-lightspeed'
 image: 'images/light-speed.jpg'
 imageDescription: Photo by Joshua Sortino on Unsplash
 date: "2023-07-06T00:00:00"
