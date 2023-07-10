@@ -121,7 +121,7 @@ To validate that our `delete_file.yml` playbook is working as expected, we shoul
 
 
 ## Wrapping Up
-What I have covered above are the capabilities that are now available to Ansible developers to rapidily develop Ansible content using Ansible Lightspeed with IBM Watson Code Assistant, and rapidly deploy and test this content as an operator in OpenShift using the IBM Operator Collection SDK. I encourage you to try this out for yourself using the links below for everything your need to get started. All of the tools used in this demo are free to get started, with the 60 day free trial of the IBM Z and Cloud Modernization Stack now available to access the IBM z/OS Cloud Broker, and the Tech Preview release of Ansible Lightspeed with IBM Watson Code Assistant also available for free.
+What I have covered above are the capabilities that are now available to Ansible developers to rapidily develop Ansible content using Ansible Lightspeed with IBM Watson Code Assistant, and rapidly deploy and test this content as an operator in OpenShift using the IBM Operator Collection SDK. You can find the source code for this tutorial at https://github.com/freemanlatrell/file-manager-operator-collection/tree/ansible-lightspeed/freemanlatrell/file_manager. I encourage you to try this out for yourself using the links below for everything your need to get started. All of the tools used in this demo are free to get started, with the 60 day free trial of the IBM Z and Cloud Modernization Stack now available to access the IBM z/OS Cloud Broker, and the Tech Preview release of Ansible Lightspeed with IBM Watson Code Assistant also available for free.
 
 I hope you are as excitied as I am about the new capabilities of generative AI, in combination with the tools available in the IBM Z and Cloud Modernization Stack, to help accelerate our IBM Z modernization journey! 
 
@@ -129,6 +129,7 @@ I hope you are as excitied as I am about the new capabilities of generative AI, 
 ## Resources
 - 60 day free trial of the IBM Z and Cloud Modernization Stack: https://www.ibm.com/account/reg/us-en/signup?formid=urx-51680
 - Tech Preview release of Ansible Lightspeed with IBM Watson Code Assistant: https://www.ansible.com/blog/welcome-to-the-ansible-lightspeed-technical-preview?sc_cid=701f2000000txokAAA&utm_source=bambu&utm_medium=organic_social&blaid=4724585
+- Source code for this tutorial: https://github.com/freemanlatrell/file-manager-operator-collection/tree/ansible-lightspeed/freemanlatrell/file_manager
 
 [oc-sdk]:https://github.com/IBM/operator-collection-sdk/tree/main/ibm/operator_collection_sdk
 [light-speed]:https://www.ansible.com/blog/welcome-to-the-ansible-lightspeed-technical-preview?sc_cid=701f2000000txokAAA&utm_source=bambu&utm_medium=organic_social&blaid=4724585
