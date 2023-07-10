@@ -9,4 +9,7 @@
   hugo serve
   ```
 
+Localhost URL: http://localhost:1313/blog/
+
+
 [hugo-installation]:https://gohugo.io/installation/
