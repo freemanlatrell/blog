@@ -6,7 +6,7 @@
 ## Local Deployment
   ```bash
   cd ./freemanlatrellblog
-  hugo serve
+  hugo server
   ```
 
 Localhost URL: http://localhost:1313/blog/
