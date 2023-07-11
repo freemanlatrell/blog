@@ -18,7 +18,7 @@ In this blog post, we will take you through a step-by-step guide on how to initi
 Join us as we explore the exciting world of Operator Collection development and discover how the IBM Operator Collection SDK and Ansible Lightspeed with IBM Watson Code Assistant can revolutionize your workflow. Let's dive in!
 
 ## Step 1: Install the IBM z/OS Cloud Broker Operator
-In order to create an Operator Collection and successfully deploy it in OpenShift, the first step is to install the [IBM z/OS Cloud Broker][broker] operator. This can be achieved by finding the IBM z/OS Cloud Broker operator from the OperatorHub catalog, installing it into our designated Namespace, and then proceeding to create a `ZosCloudBroker` instance.
+In order to create an Operator Collection and successfully deploy it in OpenShift, the first step is to install the [IBM z/OS Cloud Broker][broker] operator. This can be achieved by finding the IBM z/OS Cloud Broker operator from the OperatorHub catalog, installing it into our designated namespace, and then proceeding to create a `ZosCloudBroker` instance.
 
 {{< rawhtml >}} 
 
@@ -64,7 +64,7 @@ Additionally, we'll create the `delete_file.yml` playbook to delete the previous
 
 {{< /rawhtml >}}
 
-## Step 4: Update the operator-config.yaml file
+## Step 4: Update the operator-config.yml file
 Once we have configured our playbooks, it is essential to provide the necessary values in our `operator-config.yml` file. This file serves as a central place to define crucial details about our operator, including its name, description, and the icon to be displayed in OpenShift. Moreover, it allows us to extend the Kubernetes API with our own custom API called `File` by specifying a [custom resource][custom-resource] name. Additionally, we can specify the playbooks that should be executed when a user creates or deletes an instance of our new `File` API. We can also define variables that will be accessible to the user in OpenShift, enabling them to supply values to our playbook. For this demostration, we will only require a single variable named `filename`.
 
 {{< rawhtml >}} 
@@ -123,7 +123,7 @@ To confirm the proper functioning of our `delete_file.yml` playbook, we should d
 ## Wrapping Up
 In this comprehensive blog post, we delved into the remarkable potential of combining Ansible Lightspeed with IBM Watson Code Assistant, along with the IBM Operator Collection SDK. These cutting-edge tools empower developers to swiftly create, test, and deploy Ansible content as operators in OpenShift. To begin leveraging these incredible resources, take advantage of the following free offerings:
 
-- Try the IBM Z and Cloud Modernization Stack for free for 60 days: https://www.ibm.com/account/reg/us-en/signup?formid=urx-51680
+- Experience the power of the IBM Z and Cloud Modernization Stack with a complimentary 60-day trial: https://www.ibm.com/account/reg/us-en/signup?formid=urx-51680
 - Access the Tech Preview release of Ansible Lightspeed with IBM Watson Code Assistant: https://www.ansible.com/blog/welcome-to-the-ansible-lightspeed-technical-preview?sc_cid=701f2000000txokAAA&utm_source=bambu&utm_medium=organic_social&blaid=4724585
 - Find the source code for this tutorial: https://github.com/freemanlatrell/file-manager-operator-collection/tree/ansible-lightspeed/freemanlatrell/file_manager
 
