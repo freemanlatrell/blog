@@ -11,12 +11,12 @@ authorTitle: Lead Architect - IBM z/OS Cloud Broker
 
 With the release of the [IBM Operator Collection SDK][oc-sdk], we've simplified the [Operator Collection][oc-blog] development process by providing all of the tools needed to quickly deploy and debug your Ansible content in OpenShift. Now, with the [Tech Preview release of Ansible Lightspeed with IBM Watson Code Assistant][light-speed], we can further simplify this development process using generative AI, to streamline the creation of the Ansible content in your Operator Collection.
 
-Ansible Lightspeed with IBM Watson Code Assistant is a generative AI tool, used to build quality Ansible code quickly and efficiently. This is enabled via the Ansible VS Code extension in your VS Code editor. The foundational model trained on open source data, allows for task recommendations based soley off of the task name entered by the user.
+Ansible Lightspeed with IBM Watson Code Assistant is a generative AI tool, used to build quality Ansible code quickly and efficiently. This is enabled via the Ansible VS Code extension in your VS Code editor. The foundational model trained on open source data, allows for task recommendations based solely off of the task name entered by the user.
 
 In this blog, we'll walk through the steps on how to initialize an Operator Collection using the IBM Operator Collection SDK, create two playbooks that create and delete a file on a remote host using Ansible Lightspeed with IBM Watson Code Assistant, and deploy this Operator Collection to OpenShift using the IBM Operator Collection SDK, where we can then validate that our operator is working as expected.
 
 ## Step 1: Install the IBM z/OS Cloud Broker Operator
-To develop an Operator Collection and deploy it in OpenShift, we must first install the [IBM z/OS Cloud Broker][broker] operator.
+To develop an Operator Collection and deploy it in OpenShift, we must first install the [IBM z/OS Cloud Broker][broker] operator. We will do this by locating the available IBM z/OS Cloud Broker operator in the OperatorHub catalog, installing this operator into our Namespace, and creating a `ZosCloudBroker` instance.
 
 {{< rawhtml >}} 
 
@@ -27,7 +27,7 @@ To develop an Operator Collection and deploy it in OpenShift, we must first inst
 {{< /rawhtml >}}
 
 ## Step 2: Initialize the Operator Collection
-Using the IBM Operator Collection SDK, we will now initialize our Operator Collection, to generate a template with all of the requirements needed to be consumed by the IBM z/OS Cloud Broker.
+Using the IBM Operator Collection SDK, we will now initialize our Operator Collection, to generate a scaffold with all of the requirements needed to be consumed by the IBM z/OS Cloud Broker. When initializing our Operator Collection with the SDK, we must first enter our Ansible Collection name, and our Ansible Galaxy Namespace for this collection.
 
 {{< rawhtml >}} 
 
@@ -38,9 +38,9 @@ Using the IBM Operator Collection SDK, we will now initialize our Operator Colle
 {{< /rawhtml >}}
 
 ## Step 3: Generate playbook tasks using Ansible Lightspeed with IBM Watson Code Assistant
-Now that we've initialized our Operator Collection, we can now use Ansible Lightspeed with IBM Watson Code Assistant to generate the tasks in our playbooks by simply specifying a task name with what we want our task to execute, and allowing Ansible Lightspeed to provide the recommendation to accomplish that task. 
+Now that we've initialized our Operator Collection, we can now use Ansible Lightspeed with IBM Watson Code Assistant to generate the tasks in our playbooks, by specifying a task name with what we want our task to execute, and allowing Ansible Lightspeed with IBM Watson Code Assistant to provide the recommendation to accomplish that task. 
 
-We'll start with a playbook called `create_file.yml` which will create a new directory on our host, and touch a new file in the directory that was previously created.
+We'll start with a playbook called `create_file.yml` which will create a new directory on our host, and touch a new file in the directory that was previously created. Once each task name is entered, Ansible Lightspeed with IBM Watson Code Assistant then provides a recommendation to accomplish this task, in which I will then click `tab` to accept this recommendation. As for the second task in the video, notice that although I've accepted the recommendation, I've also added a modification to the recommended task to use a variable called `filename`, instead of the filename that was recommended by Ansible Lightspeed with IBM Watson Code Assistant. The accepted tasks and the additional modifications of these tasks, are all used to train the models used within Ansible Lightspeed with IBM Watson Code Assistant, so that we can continue to improve these recommendations over time. 
 
 {{< rawhtml >}} 
 
@@ -74,7 +74,9 @@ Once we've configured our playbooks, we should now configure the required values
 {{< /rawhtml >}}
 
 ## Step 5: Create the Operator using the IBM Operator Collection SDK
-Now that we've created our playbooks and configured the `operator-config.yaml` file, we are now ready to validate our Operator Collection in OpenShift. To avoid manually packaging our collection, uploading the collection to the IBM z/OS Cloud Broker, and configuring our operator and host in the IBM z/OS Cloud Broker UI, we can simply execute the `create_operator.yml` playbook provided by the IBM Operator Collection SDK using the `ocsdk-create-operator` alias on the command line.
+Now that we've created our playbooks and configured the `operator-config.yaml` file, we are now ready to validate our Operator Collection in OpenShift. To avoid manually packaging our collection, uploading the collection to the IBM z/OS Cloud Broker, and configuring our operator and host in the IBM z/OS Cloud Broker UI, we can simply execute the `create_operator.yml` playbook provided by the IBM Operator Collection SDK using the `ocsdk-create-operator` [alias][alias-commands] on the command line. 
+
+Here, we will enter the name, host, and port of the endpoint we'd like our operator to execute against, and provide our SSH credentials to connect to this host. From there, all of the resources needed to deploy our operator in OpenShift are created by the IBM Operator Collection SDK, and our operator will then be installed in our Namespace.
 
 {{< rawhtml >}} 
 
@@ -136,3 +138,4 @@ I hope you are as excitied as I am about the new capabilities of generative AI, 
 [oc-blog]:../operator-collection-blog
 [broker]:https://www.ibm.com/docs/en/cloud-paks/z-modernization-stack/2023.2?topic=automate-zos-resources-provisioning-zos-cloud-broker
 [custom-resource]:https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
+[alias-commands]:https://github.com/IBM/operator-collection-sdk/tree/main/ibm/operator_collection_sdk#configure-alias-commands-to-simplify-playbook-execution
