@@ -1,9 +1,9 @@
 ---
-title: 'Effortless Operator Collection Development: Harnessing the Potential of IBM Operator Collection SDK and Ansible Lightspeed with IBM Watson Code Assistant'
+title: 'Harnessing the Potential of IBM Operator Collection SDK and Ansible Lightspeed with IBM Watson Code Assistant'
 slug: 'building-an-operator-collection-with-ansible-lightspeed'
 image: 'images/light-speed.jpg'
 imageDescription: Photo by Joshua Sortino on Unsplash
-date: "2023-07-06T00:00:00"
+date: "2023-07-11T00:00:00"
 disableComments: false
 author: Latrell Freeman
 authorTitle: Lead Architect - IBM z/OS Cloud Broker
@@ -42,9 +42,9 @@ In our journey to create an Operator Collection, we will utilize the IBM Operato
 ## Step 3: Generate playbook tasks using Ansible Lightspeed with IBM Watson Code Assistant
 Having successfully initialized our Operator Collection, we can now tap into the power of Ansible Lightspeed with IBM Watson Code Assistant to effortlessly generate tasks in our playbooks. It all begins by specifying a task name that outlines the desired action, allowing Ansible Lightspeed with IBM Watson Code Assistant to provide expert recommendations on how to accomplish the task.
 
-In this demonstration, we'll kick off with a playbook named `create_file.yml`. This playbook is designed to create a new directory on our host and touch a new file in the directory that was previously created. As we enter each task name, Ansible Lightspeed with IBM Watson Code Assistant promptly suggest a recommended approach to fulfill the task. By simply pressing the `tab` key, we can readily accept these recommendations.
+In this demonstration, we'll kick off with a playbook named `create_file.yml`. This playbook is designed to create a new directory on our host, and touch a new file in the directory that was previously created. As we enter each task name, Ansible Lightspeed with IBM Watson Code Assistant promptly suggest a recommended approach to fulfill the task. By simply pressing the `tab` key, we can readily accept these recommendations.
 
-While following along in the video, you'll notice that for the second task, I accepted the recommendation but also made a modification to utilize a variable called `filename` instead of the suggested filename from Ansible Lightspeed with IBM Watson Code Assistant. It's worth noting that the accepted tasks and any additional modifications are valuable in training the models used within Ansible Lightspeed with IBM Watson Code Assistant. This ongoing feedback loop enables us to enhance and refine the recommendations over time.
+While following along in the video, you'll notice that for the second task, I accepted the recommendation but also made a modification to utilize a variable called `filename` instead of the suggested filename from Ansible Lightspeed with IBM Watson Code Assistant. It's worth noting that the accepted tasks and any additional modifications are valuable in training the models used within Ansible Lightspeed with IBM Watson Code Assistant. This ongoing feedback loop enables the tool to enhance and refine the recommendations over time.
 
 {{< rawhtml >}} 
 
@@ -65,7 +65,7 @@ Additionally, we'll create the `delete_file.yml` playbook to delete the previous
 {{< /rawhtml >}}
 
 ## Step 4: Update the operator-config.yml file
-Once we have configured our playbooks, it is essential to provide the necessary values in our `operator-config.yml` file. This file serves as a central place to define crucial details about our operator, including its name, description, and the icon to be displayed in OpenShift. Moreover, it allows us to extend the Kubernetes API with our own custom API called `File` by specifying a [custom resource][custom-resource] name. Additionally, we can specify the playbooks that should be executed when a user creates or deletes an instance of our new `File` API. We can also define variables that will be accessible to the user in OpenShift, enabling them to supply values to our playbook. For this demostration, we will only require a single variable named `filename`.
+Once we have configured our playbooks, it is essential to provide the necessary values in our `operator-config.yml` file. This file serves as a central place to define crucial details about our operator, including its name, description, and the icon to be displayed in OpenShift. Moreover, it allows us to extend the Kubernetes API with our own custom API called `File`, by specifying a [custom resource][custom-resource] name. Additionally, we can specify the playbooks that should be executed when a user creates or deletes an instance of our new `File` API. We can also define variables that will be accessible to the user in OpenShift, enabling them to supply values to our playbook. For this demostration, we will only require a single variable named `filename`.
 
 {{< rawhtml >}} 
 
@@ -78,7 +78,7 @@ Once we have configured our playbooks, it is essential to provide the necessary 
 ## Step 5: Create the Operator using the IBM Operator Collection SDK
 With our playbooks in place and the `operator-config.yml` file properly configured, it's time to proceed with the validation of our Operator Collection in OpenShift. Thankfully, we can simplify the entire manual process of packaging the collection, uploading it to the IBM z/OS Cloud Broker, and configuring the operator and host via the IBM z/OS Cloud Broker UI. Instead, we can effortlessly execute the `create_operator.yml` playbook, conveniently provided by the IBM Operator Collection SDK, by utilizing the `ocsdk-create-operator` [alias][alias-commands] on the command line.
 
-During this step, we'll be prompted to enter the desired name, host, and port for the endpoint we'd like our operator to execute against. Additionally, we'll need to provide our SSH credentials for establishing a connection to the designated host. By executing the playbook, the IBM Operator Collection SDK takes care of generating all the necessary resources to deploy our operator in OpenShift. Soon after, our operator will be smoothly installed within our designated namespace.
+During this step, we'll be prompted to enter the desired name, host, and port for the endpoint we'd like our operator to execute against. Additionally, we'll need to provide our SSH credentials for establishing a connection to the designated host. By executing the playbook, the IBM Operator Collection SDK takes care of generating all the necessary resources to deploy our operator in OpenShift. Soon after, our operator will be installed within our designated namespace.
 
 {{< rawhtml >}} 
 
@@ -89,7 +89,7 @@ During this step, we'll be prompted to enter the desired name, host, and port fo
 {{< /rawhtml >}}
 
 ## Step 6: Create a File instance in OpenShift
-To validate the functionality of our `create_file.yml` playbook, we should create an instance of the new `File` custom resource. This involves specifying the `filename` to create and the host against which the file will be created.
+To validate the functionality of our `create_file.yml` playbook, we should create an instance of the new `File` custom resource. This involves specifying the `filename` to create, and the host against which the file will be created.
 
 {{< rawhtml >}} 
 
