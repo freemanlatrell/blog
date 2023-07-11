@@ -6,7 +6,7 @@
         <li class="{{ if eq ($currentPage.RelPermalink) (`/blog/`) }}active{{end}}"><a href='{{ "/blog/" | relLangURL }}'>{{ .Site.Title }}</a></li>
         {{- with $data.nav.items -}}
             {{- range $i, $e := . -}}
-                <li class="{{ if eq ($currentPage.RelPermalink) (print .url `/blog/`) }}active{{end}}"><a href='{{ .url | relLangURL }}'>{{- .title -}}</a></li>
+                <li class="{{ if eq ($currentPage.RelPermalink) (print .url `/blog/`) }}active{{end}}"><a href='{{ .url `/blog/` | relLangURL }}'>{{- .title -}}</a></li>
             {{- end -}}
         {{- end -}}
         {{ with $data.contactinfo }}
