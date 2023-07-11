@@ -127,7 +127,7 @@ In this comprehensive blog post, we delved into the remarkable potential of comb
 - Access the Tech Preview release of Ansible Lightspeed with IBM Watson Code Assistant: https://www.ansible.com/blog/welcome-to-the-ansible-lightspeed-technical-preview?sc_cid=701f2000000txokAAA&utm_source=bambu&utm_medium=organic_social&blaid=4724585
 - Find the source code for this tutorial: https://github.com/freemanlatrell/file-manager-operator-collection/tree/ansible-lightspeed/freemanlatrell/file_manager
 
-Prepare to be amazed! The immense potential of generative AI, in conjunction with the robust tools available in the IBM Z and Cloud Modernization Stack, is poised to transform our IBM Z modernization journey. Join me in embracing the excitement of these newfound capabilities!
+Prepare to be amazed! The immense potential of generative AI, in conjunction with the robust tools available in the IBM Z and Cloud Modernization Stack, are poised to transform our IBM Z modernization journey. Join me in embracing the excitement of these newfound capabilities!
 
 [oc-sdk]:https://github.com/IBM/operator-collection-sdk/tree/main/ibm/operator_collection_sdk
 [light-speed]:https://www.ansible.com/blog/welcome-to-the-ansible-lightspeed-technical-preview?sc_cid=701f2000000txokAAA&utm_source=bambu&utm_medium=organic_social&blaid=4724585
