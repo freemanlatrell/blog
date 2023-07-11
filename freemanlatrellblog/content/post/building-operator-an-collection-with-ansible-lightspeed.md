@@ -1,5 +1,5 @@
 ---
-title: 'Harnessing the Potential of IBM Operator Collection SDK and Ansible Lightspeed with IBM Watson Code Assistant'
+title: 'Harnessing the Potential of the IBM Operator Collection SDK and Ansible Lightspeed with IBM Watson Code Assistant'
 slug: 'building-an-operator-collection-with-ansible-lightspeed'
 image: 'images/light-speed.jpg'
 imageDescription: Photo by Joshua Sortino on Unsplash
