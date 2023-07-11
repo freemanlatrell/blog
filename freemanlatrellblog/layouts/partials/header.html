@@ -1,5 +1,9 @@
 <!-- Header -->
+<head>
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+</head>
 <header id="header">
-    <a href='{{ "/" | relLangURL }}' class="logo">{{ .Site.Title }}</a>
+    <a href='{{ "/blog" | relLangURL }}' class="logo">{{ .Site.Title }}</a>
 </header>
   
