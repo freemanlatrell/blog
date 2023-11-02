@@ -8,14 +8,14 @@ author: Latrell Freeman
 authorTitle: Lead Architect - IBM z/OS Cloud Broker
 ---
 
-In conjunction with the latest release of the IBM Z and Cloud Modernization stack, we're happy to announce the initial release of the IBM Operator Collection SDK VS Code extension, to continue to improve the Operator Collection development experience. In the previous release of the IBM Z and Cloud Modernization Stack, we also released the [IBM Operator Collection SDK][oc-sdk] Ansible collection, which provides a comprehensive toolkit designed to simplify the creation, and debugging of Operator Collections in OpenShift. Now, with the release of the [IBM Operator SDK VS Code extension][oc-sdk-vs-code], we are now integrating that toolkit in the VS Code editor, to further simplify the Operator Collection development experience, and provide better insight into your deployments and resources on OpenShift. Here are a few of the features that are available in the IBM Operator SDK VS Code extension to simplify and improve the Operator Collection development experience.
+In conjunction with the latest release of the IBM Z and Cloud Modernization stack, we're happy to announce the initial release of the IBM Operator Collection SDK VS Code extension. Along with the previous release of the IBM Z and Cloud Modernization Stack, we also released the [IBM Operator Collection SDK][oc-sdk] Ansible collection, which provides a comprehensive toolkit designed to simplify the creation, and debugging of Operator Collections in OpenShift. Now, with the release of the [IBM Operator SDK VS Code extension][oc-sdk-vs-code], we are now integrating that toolkit in the VS Code editor, to further simplify the Operator Collection development experience, and provide better insights into your deployments and resources on OpenShift. Here are a few of the features that are available in the IBM Operator SDK VS Code extension to simplify and improve the Operator Collection development experience.
 
 
 ## Single-click Actions To Deploy Operator Collection to OpenShift
 
-With this extension, users will now have the ability to execute each IBM Operator Collection SDK Ansible playbooks with a single click of an action in the primary side bar in the VS Code editor. These actions consist of creating an operator once you're ready to validate your changes in OpenShift, redeploying the operator to quickly apply modifications in OpenShift, and deleting the operator once your testing is complete.  
+With this extension, users will now have the ability to execute each IBM Operator Collection SDK Ansible playbook with a single click of an action in the primary side bar in the VS Code editor. These actions consist of creating an operator once you're ready to validate your changes in OpenShift, redeploying the operator to quickly apply modifications in OpenShift, and deleting the operator once your testing is complete.  
 
-![Deploy and manage operator](/static/images/oc-sdk-actions.png)
+![Gif Placeholder]()
 
 
 ## Monitor OpenShift Resources
@@ -28,13 +28,19 @@ Below are some of the resources that are viewable in the primary side bar:
 - **z/OS Cloud Broker Custom Resources:** Monitor the status of the z/OS Cloud Broker custom resources such as `ZosEndpoints`, `OperatorCollections`, and `SubOperatorConfigs`, which are used to generate the operator.
 - **Operator Custom Resources:** Create and monitor your operator custom resources in OpenShift, while also having the ability to view the ansible-runner execution logs generated during each reconciliation.
 
+![Gif Placeholder]()
+
 ## Manage OpenShift Connectivity
 
 Quickly log in and update your OpenShift Project directly from the VS Code editor, removing the need to context switch between the terminal and the VS Code editor to manage OpenShift access.
 
+![Gif Placeholder]()
+
 ## Operator Collection Linting
 
-Once the extension is installed, and an Operator Collection is detected in the workspace, the linter is automatically enabled to provide assistance during Operator Collection development. The Operator Collectin linter provides instant validation and code completion against the `operator-config.yml` file using the latest Operator Collection Specification, and also the ability to hover and display descriptions of each avaialble property in the configuration.
+Once the extension is installed, and an Operator Collection is detected in the workspace, the linter is automatically enabled to provide assistance during Operator Collection development. The Operator Collection linter provides instant validation and code completion against the `operator-config.yml` file using the latest Operator Collection specification, and also the ability to hover and display descriptions of each avaialble property in the configuration.
+
+![Gif Placeholder]()
 
 ## Getting Started
 
